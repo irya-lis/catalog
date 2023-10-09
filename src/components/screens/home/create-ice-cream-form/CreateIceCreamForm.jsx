@@ -1,35 +1,39 @@
-import React, {useState} from "react";
+import React from "react";
 import styles from "./CreateIceCreamForm.module.css";
+import {useForm} from "react-hook-form";
+import ErrorMessage from "./ErrorMessage";
+import useCreateIceCream from "./useCreateIceCream";
 
-const CreateIceCreamForm = ({setIceCreams}) => {
-    const [data, setData] = useState({
-        name: '',
-        price: '',
-        image: ''
+
+const CreateIceCreamForm = () => {
+
+    const {register, reset, handleSubmit, formState: {errors}} = useForm({
+        mode: 'onChange'
     })
 
+    const {createIceCream} = useCreateIceCream(reset);
 
-    const createIceCream = (e) => {
-        e.preventDefault();
-        setIceCreams(prev => [ {id: prev.length + 1, ...data}, ...prev])
-    }
+    return (
+        <form className={styles.form} onSubmit={handleSubmit(createIceCream)}>
+            <input
+                {...register('name', {required: 'Name is required!'})}
+                placeholder="Name"
+            />
+            <ErrorMessage errors={errors}/>
 
-    return(
-        <form className={styles.form}>
-            <input placeholder="Name"
-                   onChange={e => setData(prev => ({
-                       ...prev, name: e.target.value
-            }))} value={data.name}/>
-            <input placeholder="Price"
-                   onChange={e => setData(prev => ({
-                       ...prev, price: e.target.value}))}
-                   value={data.price}/>
-            <input placeholder="Image"
-                   onChange={e => setData(prev => ({
-                       ...prev, image: e.target.value}))}
-                   value={data.image}/>
-            <button className="btn" onClick={e => createIceCream(e)}>Create</button>
+            <input
+                {...register('price', {required: 'Price is required!'})}
+                placeholder="Price"
+            />
+            <ErrorMessage errors={errors}/>
 
+            <input
+                {...register('image', {required: 'Image is required!'})}
+                placeholder="Image"
+            />
+            <ErrorMessage errors={errors}/>
+
+            <button className="btn">Create</button>
         </form>
     )
 }

@@ -1,23 +1,21 @@
-import React, {useState} from 'react';
-import {iceCreams as iceCreamsData} from './iceCreams.data'
-import IceCreamItem from "./iceCream-item/IceCreamItem";
+import React from 'react';
 import CreateIceCreamForm from "./create-ice-cream-form/CreateIceCreamForm";
+import {IceCreamService} from "../../../services/iceCream.service";
+import {useQuery} from "@tanstack/react-query";
+import Header from "../../ui/Header";
+import Catalog from "../../ui/Catalog";
 
 const Home = () => {
-    const [iceCreams, setIceCreams] = useState(iceCreamsData);
+
+    const {data, isLoading} = useQuery(['iceCream'], () => IceCreamService.getAll(),)
+    if (isLoading) return <p>Loading...</p>
+
     return (
         <div>
             <h1>Ice Cream catalog</h1>
-            <CreateIceCreamForm setIceCreams={setIceCreams}/>
-            <div>
-
-                {iceCreams.length ? (iceCreams.map(iceCream => (
-                        <IceCreamItem key={iceCream.id} iceCream={iceCream}/>
-                    )
-                )) : <p>The are no ice cream</p>
-                }
-
-            </div>
+            <Header/>
+            <CreateIceCreamForm/>
+           <Catalog  data={data}/>
         </div>
     );
 }
