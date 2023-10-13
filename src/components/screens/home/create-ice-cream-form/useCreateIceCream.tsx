@@ -1,22 +1,24 @@
-import React from "react";
 import {useMutation, useQueryClient} from "@tanstack/react-query";
 import {IceCreamService} from "../../../../services/iceCream.service";
+import {IIceCreamData} from "../../../../types/iceCream.interface";
+import {SubmitHandler, UseFormReset} from "react-hook-form";
 
-const useCreateIceCream = ({reset}) => {
+
+
+const useCreateIceCream = (reset:UseFormReset<IIceCreamData>) => {
     const queryClient = useQueryClient();
 
     const {mutate} = useMutation(['create ice cream'],
-        (data) => IceCreamService.create(data), {
+        (data: IIceCreamData) => IceCreamService.create(data), {
             onSuccess: () => {
-                queryClient.invalidateQueries('iceCream')
+                queryClient.invalidateQueries(['iceCream'])
                 reset()
             }
         })
 
-    const createIceCream = (data) => {
+    const createIceCream: SubmitHandler<IIceCreamData> = (data) => {
         mutate(data)
     }
-
     return {createIceCream}
 }
 

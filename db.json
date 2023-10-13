@@ -1,0 +1,52 @@
+{
+  "iceCreams": [
+    {
+      "id": 1,
+      "name": "Blueberry Ice Cream with raspberries",
+      "price": 4,
+      "image": "http://localhost:3000/1.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Chocolate Ice Cream with raspberries",
+      "price": 4,
+      "image": "http://localhost:3000/2.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Raspberry Ice Cream",
+      "price": 4.02,
+      "image": "http://localhost:3000/3.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Mango Ice Cream",
+      "price": 7.5,
+      "image": "http://localhost:3000/4.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Vanilla Ice Cream",
+      "price": 7.5,
+      "image": "http://localhost:3000/5.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Cookie Monster Ice Cream",
+      "price": 5.05,
+      "image": "http://localhost:3000/6.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Pistachio Ice Cream",
+      "price": 5.05,
+      "image": "http://localhost:3000/7.jpg"
+    },
+    {
+      "name": "Vanilla Ice Cream",
+      "price": "10",
+      "image": "https://cdn.tveda.ru/thumbs/f6e/f6eaa62167ba88971fb7dc96e940d4e3/2d13a9c9882bcd5871ff0f56523c372d.jpg",
+      "id": 8
+    }
+  ]
+}

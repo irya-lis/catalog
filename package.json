@@ -11,8 +11,10 @@
     "@types/node": "^16.18.55",
     "@types/react": "^18.2.24",
     "@types/react-dom": "^18.2.8",
+    "animate.css": "^4.1.1",
     "axios": "^1.5.1",
     "react": "^18.2.0",
+    "react-animations": "^1.0.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.47.0",
     "react-router-dom": "^6.16.0",
@@ -43,5 +45,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "prop-types": "^15.8.1",
+    "styled-components": "^6.0.8"
   }
 }
