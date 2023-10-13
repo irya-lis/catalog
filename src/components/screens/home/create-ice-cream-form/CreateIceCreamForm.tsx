@@ -21,7 +21,7 @@ const CreateIceCreamForm = () => {
                 {...register('name', {required: 'Name is required!'})}
                 placeholder="Name"
             />
-            <ErrorMessage errors={errors?.name?.message}/>
+            <ErrorMessage errors={errors?.name?.message} />
 
             <input
                 {...register('price', {required: 'Price is required!'})}

@@ -47,6 +47,12 @@
       "price": "10",
       "image": "https://cdn.tveda.ru/thumbs/f6e/f6eaa62167ba88971fb7dc96e940d4e3/2d13a9c9882bcd5871ff0f56523c372d.jpg",
       "id": 8
+    },
+    {
+      "name": "Cherry Sorbet",
+      "price": "8.95",
+      "image": "https://www.creamish.com.au/wp-content/uploads/2018/02/cherry-sorbet-recipe.jpg",
+      "id": 9
     }
   ]
 }

@@ -6,3 +6,41 @@
 button {
     position: initial;
 }
+
+.form {
+    margin: 10px auto 30px;
+}
+
+.form input {
+    padding: 5px 10px;
+    outline: none;
+    transition: border-color 0.4s ease;
+    border: 2px solid transparent;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.form input:focus {
+    border-color: aqua;
+}
+
+.error {
+    color: darkred;
+}
+
+.login {
+    float: right;
+    margin-top: -30px;
+    position: relative; /* Добавлено для позиционирования ошибки относительно этого блока */
+}
+
+.errorMessageContainer {
+    position: absolute;
+    bottom: -50px; /* Резервируем место для ошибки ниже формы */
+    left: 0;
+    right: 0;
+}
+
+.error {
+    color: darkred;
+}
