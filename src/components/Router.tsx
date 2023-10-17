@@ -2,11 +2,11 @@ import React from "react";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Home from "./screens/home/Home";
 import IceCreamDetail from "./screens/iceCream-detail/IceCreamDetail";
-
+const basename = process.env.PUBLIC_URL || "/";
 
 const Router = () => {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename={basename}>
             <Routes>
                 <Route path="/" element={<Home/>}/>
                 <Route path="/iceCream/:id" element={<IceCreamDetail/>}/>
